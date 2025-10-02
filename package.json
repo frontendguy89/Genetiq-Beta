@@ -2,7 +2,7 @@
 	"name": "genetiq-app",
 	"private": true,
 	"version": "0.0.0",
-	"type": "commonjs",
+	"type": "module",
 	"scripts": {
 		"start": "concurrently \"node server/index.js --watch server/*\" \"vite\" --kill-others --kill-others-on-fail",
 		"build": "tsc -b && vite build",
@@ -16,13 +16,16 @@
 		"@react-three/fiber": "^8.17.12",
 		"@reduxjs/toolkit": "^2.5.0",
 		"bcrypt": "^5.1.1",
-		"concurrently": "^9.1.2",
+		"concurrently": "^9.2.1",
 		"cors": "^2.8.5",
 		"dotenv": "^16.4.7",
 		"express": "^5.1.0",
+		"hls.js": "^0.12.4",
+		"i18next": "^25.5.3",
 		"mongoose": "^8.13.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
+		"react-i18next": "^16.0.0",
 		"react-redux": "^9.2.0",
 		"react-router-dom": "^7.1.1",
 		"react-toastify": "^11.0.3",
@@ -32,6 +35,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.17.0",
+		"@swc/core": "^1.13.5",
 		"@types/node": "^22.10.6",
 		"@types/react": "^18.3.18",
 		"@types/react-dom": "^18.3.5",
@@ -53,5 +57,13 @@
 		"typescript-eslint": "^8.19.1",
 		"vite": "^6.0.5",
 		"vite-plugin-svgr": "^4.3.0"
+	},
+	"pnpm": {
+		"ignoredBuiltDependencies": [
+			"@parcel/watcher",
+			"@swc/core",
+			"bcrypt",
+			"esbuild"
+		]
 	}
 }
